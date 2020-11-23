@@ -1,6 +1,8 @@
 function download_erlang() {
-  erlang_package_url="https://github.com/elixir-buildpack/heroku-otp/releases/download"
-  erlang_package_url="${erlang_package_url}/${erlang_version}/${STACK}.tar.gz"
+  # erlang_package_url="https://github.com/elixir-buildpack/heroku-otp/releases/download"
+  # erlang_package_url="${erlang_package_url}/${erlang_version}/${STACK}.tar.gz"
+  erlang_package_url="https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-14"
+  erlang_package_url="${erlang_package_url}/OTP-${erlang_version}.tar.gz"
 
   # If a previous download does not exist, then always re-download
   if [ ! -f "$(erlang_download_path)/${erlang_version}/${STACK}.tar.gz" ]; then
